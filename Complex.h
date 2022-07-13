@@ -22,6 +22,14 @@ public:
     Complex(const float r = 0, const float i = 0) : re(r), im(i) {};
     Complex(const Complex &c) : re(c.re), im(c.im) {};
 
+    //           a + bi
+    // Complex = ------
+    //           c + di
+    Complex(const float a = 0, const float b = 0, const float c = 0, const float d = 0){
+        re = (a*c + b*d) / (c*c + d*d);
+        im = (b*c - a*d) / (c*c + d*d);
+    };
+
 
     void set(const float r, const float i ) { re = r; im = i; };
     void setReal(const float r)  { re = r; };
